@@ -1,0 +1,117 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+      <script src="hello.js"></script>
+      <script type="text/javascript" src="validation.js">  </script>  
+   </head>
+   <body onload="resetSelection()">
+      <div class="container well">
+         <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+               <h1 class="text-center">User Registration</h1>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span"> First Name *</label>
+                     <input oninput="myFunc()" type="text" class="form-control" id="fname" name="name" placeholder="Enter your first name">
+                     <span id="nameerror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span1"> Last Name </label>
+                     <input oninput="myFunc()" type="text" class="form-control" id="lname" name="lname" placeholder="Enter your last name">
+                     <span id="lnameerror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span2">Gender*</label>
+                     <br>
+                     <input oninput="myFunc()" type="radio"    id="male" name="gender" value="male"> Male
+                     <br>
+                     <input oninput="myFunc()" type="radio"  id="female" name="gender" value="female"> Female
+                     <br>
+                     <span id="gendererror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span3">Date of Birth*</label>
+                     <br>
+                     <input oninput="myFunc()" type="date" name="date" id="dob" class="form-control">
+                     <span id="dateerror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="col-md-6">
+                     <div class="form-group">
+                     </div>
+                  </div>
+                  <div class="col-md-6"></div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span4">Email*</label>
+                     <input oninput="myFunc()" type="text"  class="form-control"  id="email" name="mail" placeholder="Enter your email">
+                     <span id="emailerror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span5">Mobile number</label>
+                     <input oninput="myFunc()" type="text" id="number" class="form-control" name="number" maxlength="10" placeholder="Enter your mobile number">
+                     <span id="numbererror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span6">State*</label> <br>
+                     <select  id="state" size="1" class="form-control" onchange="makeSubmenu(this.value),myFunc()">
+                        <option value="" disabled selected>Choose State</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                     </select>
+                     <span id="stateerror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group">
+                     <label id="span7">District*</label>
+                     <br>
+                     <select oninput="myFunc()" id="district" size="1" class="form-control">
+                        <option value="" disabled selected>Choose City</option>
+                        <option></option>
+                     </select>
+                     <span id="districterror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="form-group">
+                     <label id="span8">Address</label>
+                     <textarea oninput="myFunc()" type="text" id="address" class="form-control" name="address" placeholder="Enter your address"></textarea>
+                     <span id="addresserror"></span>
+                     <br>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="form-group text-right">
+                     <input type="submit" value ="Register" class="btn btn-primary" onclick="func()" > 
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-2"></div>
+         </div>
+      </div>
+      <!--row and container end-->
+   </body>
+</html>
