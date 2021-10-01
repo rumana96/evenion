@@ -1,3 +1,43 @@
+
+function func(){
+		
+	
+    var name = document.getElementById("fname").value.trim();
+	var lname= document.getElementById("lname").value.trim();
+	 var male =document.getElementById("male").value.trim();
+	 var female =document.getElementById("female").value.trim();
+	 var dob = document.getElementById("dob").value.trim();
+	 var lnamepattern = /\D/;
+	 var email = document.getElementById("email").value.trim();
+	 var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,6}$/;  
+	 var number = document.getElementById("number").value.trim();
+	 var address = document.getElementById("address").value.trim(); 
+	 var state = document.getElementById("state").value.trim();
+	 var district = document.getElementById("district").value.trim();
+
+	if((name !="")&&(name.length>3)&&(name.length<20)&&((male != false) && (female != false)) &&((dob!=""))&&((email!="") ||
+	 (pattern.test(email)))&&(state!="")&&(district!="")&&
+	 ((address!="")||(address.length<500))){
+		 document.write("<span>Your Details</span><br><br>")
+
+		document.write("Name : " + name +" " + lname +" <br>");
+		document.write("DoB : " + dob + "</br>");
+	if(male==true){
+		document.write("Gender : Male" +"<br>");
+	}else{
+		document.write("Gender : Female" +"<br>");
+	}
+	document.write("Email : " + email+ "<br>");
+	document.write("Mobile : " + number+ "<br>");
+	document.write("Address : " + address  +" " + district  +" " + state + "<br>");
+		
+	
+	}else{
+	  return false;
+	}
+	
+}
+
 function myFunc(){
 	
 	var name= document.getElementById("fname").value.trim(); 
@@ -203,48 +243,10 @@ function myFunc(){
 }
 
 
-function func(){			
-    var name = document.getElementById("fname").value.trim();
-	var lname= document.getElementById("lname").value.trim();
-	 var male =document.getElementById("male").value.trim();
-	 var female =document.getElementById("female").value.trim();
-	 var dob = document.getElementById("dob").value.trim();
-	 var lnamepattern = /\D/;
-	 var email = document.getElementById("email").value.trim();
-	 var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,6}$/;  
-	 var number = document.getElementById("number").value.trim();
-	 var address = document.getElementById("address").value.trim(); 
-	 var state = document.getElementById("state").value.trim();
-	 var district = document.getElementById("district").value.trim();
-
-	if((name !="")&&(name.length>3)&&(name.length<20)&&((male != false) && (female != false)) &&((dob!=""))&&((email!="") ||
-	 (pattern.test(email)))&&(state!="")&&(district!="")&&
-	 ((address!="")||(address.length<500))){
-		 document.write("<span>Your Details</span><br><br>")
-
-		document.write("Name : " + name +" " + lname +" <br>");
-		document.write("DoB : " + dob + "</br>");
-	if(male==true){
-		document.write("Gender : Male" +"<br>");
-	}else{
-		document.write("Gender : Female" +"<br>");
-	}
-	document.write("Email : " + email+ "<br>");
-	document.write("Mobile : " + number+ "<br>");
-	document.write("Address : " + address  +" " + district  +" " + state + "<br>");
-		
-	
-	}else{
-	  return false;
-	}
-	
-}
-
-
 
 
 	function makeSubmenu(value) {
-		var districtsByState = {
+		var citiesByState = {
 			"Andhra Pradesh": ["Anantpur ","Chittoor","Nellore", "Prakasam "],
 			"Arunachal Pradesh": ["Anjaw","Changlang","East Siang","Tawang", "West Kameng"],
 			Assam: ["Baksa","Barpeta","Bongaigaon","Cachar ","Chirang","Darrang","Dhemaji"]
@@ -252,16 +254,15 @@ function func(){
 	if(value.length==0) document.getElementById("district").innerHTML = "<option></option>";
 	else {
 	var citiesOptions = "";
-	for(districtId in districtsByState[value]) {
-	districtsOptions+="<option>"+districtsByState[value][districtId]+"</option>";
+	for(cityId in citiesByState[value]) {
+	citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
 	}
-	document.getElementById("district").innerHTML = districtsOptions;
+	document.getElementById("district").innerHTML = citiesOptions;
 	}
 	}
-	function displaySelected() { 
-		var state = document.getElementById("state").value;
-	var district = document.getElementById("district").value;
-	 alert(state+"\n"+district); // \n returns the position where the newline character was found.
+	function displaySelected() { var country = document.getElementById("state").value;
+	var city = document.getElementById("district").value;
+	alert(country+"\n"+city);
 	}
 	function resetSelection() {
 	document.getElementById("state").selectedIndex = 0;
